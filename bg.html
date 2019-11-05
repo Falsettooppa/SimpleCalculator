@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<body>
+	<center>
+		<form id="all" name="rh">
+		<div id="general">
+	<h2> FALSETTO </h2> <br>
+     <input type="text" name="oda" id="display" disabled><br><br>
+          <input type="button" name="" value="1"  onclick="key('1')">
+			<input type="button" name="" value="2"  onclick="key('2')">
+			<input type="button" name="" value="3"  onclick="key('3')">
+			<input type="button" name="" value="+"  onclick="key('+')"><br><br>
+		<input type="button" name="" value="4"  onclick="key('4')">
+			<input type="button" name="" value="5"  onclick="key('5')">
+			<input type="button" namte="" value="6"  onclick="key('6')">
+			<input type="button" name="" value="-"  onclick="key('-')"><br><br>
+		<input type="button" name="" value="7"  onclick="key('7')">
+			<input type="button" name="" value="8"  onclick="key('8')">
+			<input type="button" name="" value="9"  onclick="key('9')">
+			<input type="button" name="" value="*"  onclick="key('*')"><br><br>
+		
+		
+			<input type="button" name="" value="0"  onclick="key('0')">
+			<input type="button" name="" value="."  onclick="key('.')">
+			<input type="button" name="" value="/"  onclick="key('/')">
+			<input type="button" name="" value="="  onclick="equals()"><br><br>
+			
+		
+		
+			<input type="button" name="" value="^"  onclick="key('^')">
+			<input type="button" name="" value="AC" id="g"  onclick="DE()">
+			<input type="button" name="" value="ON" id="pow" onclick="power()">
+		
+
+		
+
+</div>
+   </form>
+   </center>
+	<script type="text/javascript">
+		var fnumb;
+		var operate;
+		function power() {
+			if (pow.value == "ON") {
+
+				pow.value = "OFF";
+				display.value = 0;
+			}
+			else if(pow.value == "OFF"){
+
+				pow.value = "ON";
+				display.value = "";
+			} 
+
+		}
+		function key(f){
+			if (pow.value =="ON" && display.value==""){
+
+	        alert("please press ON key to begin an operation")
+			
+			}
+			else if (pow.value == "OFF"){
+
+				 if (display.value == 0){
+
+					display.value =f;
+
+				}
+				else{
+					display.value +=f;
+				}
+			}
+        
+		} 
+		
+		function DE(){
+			if (pow.value =="ON" && display.value==""){
+				alert("Please press ON key to begin an operation")
+			}
+			else{
+              display.value = "";
+              display.value = 0;
+			}
+			
+				
+		}
+		// function key(t){
+		// 	if (pow.value =="ON" && display.value==""){
+		// 		alert("Please press ON key to begin an operation")
+		// 	}
+		// 	else{
+		// 	fnumb= display.value;
+		// 	display.value= "";
+		// 	operate= t;
+		// 	}
+		// }
+		// function equals(){
+		// 	let snumb= display.value;
+		// 	if (pow.value =="ON" && display.value==""){
+		// 		alert("Please press ON key to begin an operation")
+		// 	}
+		// 	else if (operate== 'a') {
+		// 		display.value= parseFloat(fnumb) +  parseFloat(snumb);
+		// 	}
+		// 	else if(operate== 'm'){
+		// 		display.value= parseFloat(fnumb) -  parseFloat(snumb);
+		// 	}
+		// 	else if (operate== 't'){
+		// 		display.value= parseFloat(fnumb) *  parseFloat(snumb);
+
+		// 	}
+		// 		else if (operate== 'd'){
+		// 		display.value= parseFloat(fnumb) /  parseFloat(snumb);
+
+		// 	}
+		// 	    else if (operate== 'p') {
+		// 	    	display.value= Math. pow(fnumb,snumb)
+		// 	    }
+			
+		
+		// }
+		function equals(){
+			document.rh.oda.value= eval(document.rh.oda.value);
+
+		}
+
+		
+
+		
+		
+		
+	</script>
+
+</body>
+</html>
+<style type="text/css">
+h2{
+	text-transform: uppercase;
+	color: red;
+	font-family: sans-serif;
+	letter-spacing: 5px;
+}
+input[type="button"]{
+		height: 50px;
+		width: 50px;
+		border-radius: 5px;
+	}
+	#all{
+		/*border:1px solid black;*/
+		width: 350px;
+		height: 540px;
+		border-radius: 20px;
+		/*background-color: grey;*/
+	}
+	#general{
+		border:1px groove black;
+		width: 320px;
+		height: 480px;
+		margin-top: 25px; 
+		background-color: black;
+	}
+	#display{
+		height: 30px;
+		width: 250px;
+	}
+	#pow:hover{
+		background-color: green;
+		color: red;
+		font-family: sans-serif;
+		width: 70px;
+		letter-spacing: 2px;	
+	}
+	#pow{
+		background-color: pink;
+		color: magenta;
+		font-family: sans-serif;
+		width: 70px;
+		letter-spacing: 2px;
+		transition: 1.5s;	
+	}
+	#g{
+		background-color: red;
+		color: yellow;
+		font-family: sans-serif;
+		width: 70px;
+		letter-spacing: 2px;	
+
+	}
+
+
+	
+		
+	</style>
